@@ -1,9 +1,9 @@
-import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.webdriver import WebDriver
 
 
-def test_google_search(driver):
+def test_google_search(driver: WebDriver):
     
     url = 'https://www.google.com/'
     driver.get(url)
@@ -11,7 +11,7 @@ def test_google_search(driver):
     assert driver.current_url == url
 
 
-def test_github_web(driver):
+def test_github_web(driver: WebDriver):
     url = 'https://github.com/'
     driver.get(url)
     assert 'GitHub' in driver.title
